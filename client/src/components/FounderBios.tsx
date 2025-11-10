@@ -5,17 +5,17 @@ import brianHeadshotImg from '@assets/brian-headshot_1762803470298.png';
 
 const founders = [
   {
-    name: 'Brian Johnson',
-    title: 'Co-Founder & Technical Lead',
+    name: 'Ben',
+    title: 'Co-Founder & AI Strategist',
     image: benHeadshotImg,
-    bio: 'Brian brings 15 years of software engineering experience, with deep expertise in machine learning and automation. He leads our technical implementations, ensuring every solution is robust, scalable, and tailored to client needs.',
+    bio: "With over a decade in technology consulting, Ben specializes in helping small businesses identify and implement AI solutions that drive real ROI. He's passionate about making enterprise-level technology accessible to growing companies.",
     linkedin: '#',
   },
   {
-    name: 'Ben Thompson',
-    title: 'Co-Founder & AI Strategist',
+    name: 'Brian',
+    title: 'Co-Founder & Technical Lead',
     image: brianHeadshotImg,
-    bio: "With over a decade in technology consulting, Ben specializes in helping small businesses identify and implement AI solutions that drive real ROI. He's passionate about making enterprise-level technology accessible to growing companies.",
+    bio: 'Brian brings 15 years of software engineering experience, with deep expertise in machine learning and automation. He leads our technical implementations, ensuring every solution is robust, scalable, and tailored to client needs.',
     linkedin: '#',
   },
 ];
