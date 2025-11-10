@@ -5,17 +5,17 @@ import brianHeadshotImg from '@assets/brian-headshot_1762803470298.png';
 
 const founders = [
   {
-    name: 'Ben Thompson',
-    title: 'Co-Founder & AI Strategist',
+    name: 'Brian Johnson',
+    title: 'Co-Founder & Technical Lead',
     image: benHeadshotImg,
-    bio: "With over a decade in technology consulting, Ben specializes in helping small businesses identify and implement AI solutions that drive real ROI. He's passionate about making enterprise-level technology accessible to growing companies.",
+    bio: 'Brian brings 15 years of software engineering experience, with deep expertise in machine learning and automation. He leads our technical implementations, ensuring every solution is robust, scalable, and tailored to client needs.',
     linkedin: '#',
   },
   {
-    name: 'Brian Johnson',
-    title: 'Co-Founder & Technical Lead',
+    name: 'Ben Thompson',
+    title: 'Co-Founder & AI Strategist',
     image: brianHeadshotImg,
-    bio: 'Brian brings 15 years of software engineering experience, with deep expertise in machine learning and automation. He leads our technical implementations, ensuring every solution is robust, scalable, and tailored to client needs.',
+    bio: "With over a decade in technology consulting, Ben specializes in helping small businesses identify and implement AI solutions that drive real ROI. He's passionate about making enterprise-level technology accessible to growing companies.",
     linkedin: '#',
   },
 ];
@@ -42,7 +42,7 @@ export default function FounderBios() {
             >
               <div className="flex flex-col items-center text-center">
                 <Avatar className="w-32 h-32 mb-6 ring-4 ring-primary/30">
-                  <AvatarImage src={founder.image} alt={founder.name} />
+                  <AvatarImage src={founder.image} alt={founder.name} className="object-cover" />
                   <AvatarFallback className="text-2xl font-bold">
                     {founder.name
                       .split(' ')
