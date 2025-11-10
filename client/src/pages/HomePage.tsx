@@ -4,7 +4,9 @@ import LoadingPortal from '@/components/LoadingPortal';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
+import ProblemFraming from '@/components/ProblemFraming';
 import Solutions from '@/components/Solutions';
+import ProcessMethodology from '@/components/ProcessMethodology';
 import FounderBios from '@/components/FounderBios';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import AIFaqAccordion from '@/components/AIFaqAccordion';
@@ -24,9 +26,11 @@ export default function HomePage() {
       <main>
         <Hero />
         <StatsBar />
+        <ProblemFraming />
         <Solutions />
-        <FounderBios />
+        <ProcessMethodology />
         <TestimonialsCarousel />
+        <FounderBios />
         <AIFaqAccordion />
         <ZeroRiskGuarantee />
         <ContactSection />

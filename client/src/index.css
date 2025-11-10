@@ -205,11 +205,19 @@
   }
 
   .glow-primary {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
   }
 
   .glow-primary-lg {
-    box-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  /* Disable glows on mobile for better performance */
+  @media (max-width: 768px) {
+    .glow-primary,
+    .glow-primary-lg {
+      box-shadow: none;
+    }
   }
 }
 

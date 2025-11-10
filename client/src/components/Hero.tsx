@@ -23,38 +23,38 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-background/75 via-background/40 to-background/75" />
       </div>
 
-      {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden z-[1]">
-        {[...Array(9)].map((_, i) => (
+      {/* Simplified Particles - Only 3 for subtle effect */}
+      <div className="absolute inset-0 overflow-hidden z-[1] hidden md:block">
+        {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="absolute w-0.5 h-0.5 bg-primary rounded-full glow-primary"
+            className="absolute w-1 h-1 bg-primary/60 rounded-full"
             style={{
-              left: `${(i + 1) * 10}%`,
-              animation: `float ${15 + i}s infinite`,
-              animationDelay: `${i * 0.5}s`,
+              left: `${20 + i * 30}%`,
+              animation: `float ${20 + i * 5}s infinite`,
+              animationDelay: `${i * 2}s`,
             }}
           />
         ))}
       </div>
 
-      <div className="relative z-[2] max-w-7xl mx-auto px-8 py-32 text-center">
+      <div className="relative z-[2] max-w-7xl mx-auto px-8 py-24 md:py-32 text-center">
         <div className="space-y-8">
-          <h1 className="text-5xl md:text-7xl font-black leading-tight">
-            Transform Your Business
+          <h1 className="text-4xl md:text-7xl font-black leading-tight">
+            AI That Pays
             <br />
-            <span className="text-gradient">With AI-Powered Solutions</span>
+            <span className="text-gradient">For Itself</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            Local Edge delivers custom AI solutions for small businesses. Automate operations, scale efficiently, and compete with enterprise-level technology.
+          <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Custom AI automation for small businesses. Stop losing to competitors who already adopted AI. Get enterprise capabilities without enterprise costs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="text-lg px-8 py-6 glow-primary group"
+              className="glow-primary group"
               data-testid="button-hero-primary"
             >
               Start Your Transformation
@@ -64,7 +64,7 @@ export default function Hero() {
               size="lg"
               variant="outline"
               onClick={() => document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' })}
-              className="text-lg px-8 py-6 bg-background/50 backdrop-blur-lg border-primary/30"
+              className="bg-background/50 backdrop-blur-lg border-primary/30"
               data-testid="button-hero-secondary"
             >
               Learn More
