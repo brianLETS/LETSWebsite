@@ -60,7 +60,8 @@ export default function ChatWidget() {
 
       const data = await response.json();
       setMessages((prev) => [...prev, { role: 'assistant', content: data.message }]);
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Chat error:', error);
       setMessages((prev) => [
         ...prev,
         {
