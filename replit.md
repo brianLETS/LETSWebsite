@@ -20,13 +20,17 @@ Architect-reviewed and approved intelligent chatbot with dual-purpose functional
 - Mobile-responsive with 380px width, 600px max height
 - Touch target compliance (50px button height exceeds 44px minimum)
 
-#### Backend API Route
+#### Backend API Route (Enhanced Personality)
 - POST /api/chat endpoint handling OpenAI requests
-- Comprehensive system prompt with:
-  - Company info (services, vision, process, team)
+- **Enhanced system prompt with warm, educational, non-judgmental tone**:
+  - **Audience understanding**: Acknowledges visitors are small business owners who may not know much about AI and may feel embarrassed (that's OK!)
+  - **Personality & tone**: Warm, encouraging, conversational with comfort language ("Great question!", "Totally understandable", "Let's walk through it together")
+  - **Plain language**: No jargon without explanation, relatable analogies, normalizes "beginner" questions
+  - **Mandatory response structure**: Warm acknowledgment → reassurance → 2-3 tailored benefits → enthusiastic Ben/Brian closing
+  - **Enthusiastic closings**: Every response celebrates their challenge as "exactly the kind Local Edge loves to solve!" and emphasizes Ben and Brian's support from discovery to delivery
+  - Company info (services, vision, process, team led by Ben and Brian)
   - AI education topics (benefits, risks, skills, investment priorities)
-  - Behavioral rules (friendly tone, no DIY guidance, always CTA to discovery session)
-  - Guardrails (no pricing, no code sharing, no legal/medical claims)
+  - Guardrails (no pricing, no code sharing, no legal/medical claims, no intimidating jargon)
 - Temperature: 0.7, Max tokens: 500
 - Validates input, returns JSON response
 - Error handling with 500 status on failures
