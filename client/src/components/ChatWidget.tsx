@@ -159,14 +159,15 @@ export default function ChatWidget() {
             <p className="text-xs text-muted-foreground mb-2">Quick questions:</p>
             <div className="grid grid-cols-2 gap-2">
               {quickActions.map((action, index) => (
-                <button
+                <Button
                   key={index}
+                  variant="secondary"
                   onClick={() => handleQuickAction(action)}
-                  className="text-xs px-3 py-2 rounded-md bg-muted hover-elevate active-elevate-2 text-left transition-all"
+                  className="text-xs text-left justify-start whitespace-normal"
                   data-testid={`quick-action-${index}`}
                 >
                   {action}
-                </button>
+                </Button>
               ))}
             </div>
           </div>

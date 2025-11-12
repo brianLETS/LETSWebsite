@@ -3,7 +3,47 @@
 ## Project Overview
 Award-winning website for Local Edge Technology Solutions, a small business AI consultancy. Features premium teal/dark theme with glass morphism, functional lead capture form, AI-focused content, and comprehensive social proof elements.
 
-## Recent Changes (Latest Session - Nov 10, 2025)
+## Recent Changes (Latest Session - Nov 12, 2025)
+
+### AI Chatbot Implementation
+Architect-reviewed and approved intelligent chatbot with dual-purpose functionality.
+
+#### ChatWidget Component
+- Floating teal bubble (bottom-right corner) expanding to chat panel
+- Glass morphism styling with teal primary color accents
+- OpenAI integration via Replit AI Integrations (gpt-4o-mini, billed to credits)
+- Message states: user (teal background), assistant (muted background)
+- Quick action buttons using Shadcn Button (variant="secondary", default size)
+- Auto-scrolling message history with loading indicators
+- Error handling with graceful fallback messages
+- Mobile-responsive with 380px width, 600px max height
+- Touch target compliance (50px button height exceeds 44px minimum)
+
+#### Backend API Route
+- POST /api/chat endpoint handling OpenAI requests
+- Comprehensive system prompt with:
+  - Company info (services, vision, process, team)
+  - AI education topics (benefits, risks, skills, investment priorities)
+  - Behavioral rules (friendly tone, no DIY guidance, always CTA to discovery session)
+  - Guardrails (no pricing, no code sharing, no legal/medical claims)
+- Temperature: 0.7, Max tokens: 500
+- Validates input, returns JSON response
+- Error handling with 500 status on failures
+
+#### Dual-Purpose Functionality
+1. **Service Guidance**: High-level advice routing to free discovery session
+2. **AI Education**: Clear explanations of AI capabilities, benefits, risks, and skills needed
+
+#### Design Compliance Achieved
+- ✅ Uses Shadcn Button component (no custom height/padding)
+- ✅ Proper touch targets (50px height, exceeds 44px minimum)
+- ✅ Glass morphism theme consistency
+- ✅ Teal accent colors matching site palette
+- ✅ Proper elevation affordances (hover-elevate, active-elevate-2)
+- ✅ Mobile-responsive layout
+- ✅ E2E tested and verified
+
+## Previous Session Changes (Nov 10, 2025)
 
 ### Award-Winning Improvements Implemented
 All changes have been architect-reviewed and approved for award-winning quality.
@@ -76,6 +116,8 @@ All components now follow strict design guidelines:
 
 ## Technology Stack
 - **Frontend**: React, TypeScript, Vite
+- **Backend**: Express.js with /api/chat endpoint
+- **AI**: OpenAI gpt-4o-mini via Replit AI Integrations
 - **Styling**: Tailwind CSS, Shadcn UI components
 - **Features**: Framer Motion animations, Lucide icons
 - **Form**: Netlify Forms integration (planned)
@@ -103,6 +145,7 @@ All components now follow strict design guidelines:
 - `Navigation.tsx` - Header navigation with mobile menu
 - `Footer.tsx` - Site footer
 - `StickyCtaButton.tsx` - Floating CTA button
+- `ChatWidget.tsx` - AI chatbot with service guidance + education (NEW)
 
 ## User Preferences
 - Email notifications to Google Workspace Gmail ($25/month G Suite)
@@ -123,9 +166,9 @@ All components now follow strict design guidelines:
 - Auto-restart on file changes via HMR
 
 ## Next Steps
-1. Responsive/device QA sweep
-2. Replace mock form submission with Netlify Forms
-3. Add real email notification integration
+1. Replace mock form submission with Netlify Forms
+2. Add real email notification integration (Google Workspace Gmail)
+3. Responsive/device QA sweep
 4. Performance optimization audit
 5. SEO meta tags and Open Graph
-6. Deploy to production
+6. Prepare Netlify deployment package
