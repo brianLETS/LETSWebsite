@@ -14,6 +14,7 @@ Architect-reviewed and approved intelligent chatbot with dual-purpose functional
 - OpenAI integration via Replit AI Integrations (gpt-4o-mini, billed to credits)
 - Message states: user (teal background), assistant (muted background)
 - Quick action buttons using Shadcn Button (variant="secondary", default size)
+- **Refresh/Start Over button** - Clears chat history and shows quick actions again
 - Auto-scrolling message history with loading indicators
 - Error handling with graceful fallback messages
 - Mobile-responsive with 380px width, 600px max height

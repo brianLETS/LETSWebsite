@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Sparkles, RotateCcw } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
 
 interface Message {
@@ -17,14 +17,14 @@ const quickActions = [
   'What does AI implementation cost?',
 ];
 
+const INITIAL_MESSAGE: Message = {
+  role: 'assistant',
+  content: "Hi! I'm here to help you understand how Local Edge can transform your business with AI. What would you like to know?",
+};
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: 'assistant',
-      content: "Hi! I'm here to help you understand how Local Edge can transform your business with AI. What would you like to know?",
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -85,6 +85,12 @@ export default function ChatWidget() {
     }
   };
 
+  const handleRefresh = () => {
+    setMessages([INITIAL_MESSAGE]);
+    setInput('');
+    setIsLoading(false);
+  };
+
   if (!isOpen) {
     return (
       <div className="fixed bottom-6 right-6 z-50 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -114,14 +120,25 @@ export default function ChatWidget() {
               <p className="text-xs text-muted-foreground">Powered by AI</p>
             </div>
           </div>
-          <Button
-            size="icon"
-            variant="ghost"
-            onClick={() => setIsOpen(false)}
-            data-testid="button-chat-close"
-          >
-            <X className="h-5 w-5" />
-          </Button>
+          <div className="flex gap-1">
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={handleRefresh}
+              data-testid="button-chat-refresh"
+              title="Start over"
+            >
+              <RotateCcw className="h-4 w-4" />
+            </Button>
+            <Button
+              size="icon"
+              variant="ghost"
+              onClick={() => setIsOpen(false)}
+              data-testid="button-chat-close"
+            >
+              <X className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
 
         {/* Messages */}
